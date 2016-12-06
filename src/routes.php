@@ -12,5 +12,6 @@
 */
 
 Route::get('/web-reports/alerts/vehicles', '\App\Http\Controllers\VehicleController@index');
-Route::get('/web-reports/alerts/vehicle/{vehicle_id}', '\Alientronics\FleetanyWebReports\Controllers\ReportController@vehicleAlertsReport');
-Route::get('/web-reports/alerts/vehicle/{vehicle_id}/type/{alert_type}', '\Alientronics\FleetanyWebReports\Controllers\ReportController@vehicleAlertTypeReport');
+Route::get('/web-reports/alerts/tires', '\App\Http\Controllers\TireController@index');
+Route::get('/web-reports/alerts/{entity_type}/{entity_id}', '\Alientronics\FleetanyWebReports\Controllers\ReportController@alertsReport');
+Route::get('/web-reports/alerts/{entity_type}/{entity_id}/type/{alert_type}', '\Alientronics\FleetanyWebReports\Controllers\ReportController@alertTypeReport');

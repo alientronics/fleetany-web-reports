@@ -11,17 +11,20 @@
 <div class="mdl-grid demo-content">
 
 	@include('includes.gridview', [
-    	'filters' => ['vehicle_id' => $vehicle_id, 'sort_url' => ['id' => '', 'created_at' => '', 'status' => '']],
+    	'filters' => ['sort_url' => ['id' => '', 'created_at' => '', 'status' => '', 'name' => '', 'vehicle' => '', 'position' => '']],
     	'registers' => $registers,
     	'gridview' => [
     		'pageActive' => 'alerts-report',
          	'sortFilters' => [
-                ["class" => "mdl-cell--6-col", "name" => "created_at", "lang" => "webreports.datetime"], 
-                ["class" => "mdl-cell--3-col", "name" => "status", "lang" => "webreports.status"], 
+                ["class" => "mdl-cell--2-col", "name" => "status", "lang" => "webreports.status"], 
+                ["class" => "mdl-cell--2-col", "name" => "name", "lang" => "webreports.alertType"], 
+                ["class" => "mdl-cell--2-col", "name" => "created_at", "lang" => "webreports.datetime"], 
+                ["class" => "mdl-cell--2-col", "name" => "vehicle", "lang" => "webreports.vehicle"], 
+                ["class" => "mdl-cell--2-col", "name" => "position", "lang" => "webreports.position"], 
     		] 
     	]
     ])
-	
+    
 </div>
 
 @stop   

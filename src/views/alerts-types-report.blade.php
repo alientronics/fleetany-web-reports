@@ -11,10 +11,10 @@
 <div class="mdl-grid demo-content">
 
 	@include('includes.gridview', [
-    	'filters' => ['vehicle_id' => $vehicle_id, 'sort_url' => ['id' => '', 'name' => '', 'position' => '', 'quantity' => '']],
+    	'filters' => ['sort_url' => ['id' => '', 'name' => '', 'position' => '', 'quantity' => '']],
     	'registers' => $registers,
     	'gridview' => [
-    		'pageActive' => 'alerts-types-report',
+    		'pageActive' => $entity_key.'-alerts-types-report',
          	'sortFilters' => [
                 ["class" => "mdl-cell--6-col", "name" => "name", "lang" => "webreports.alert_type"], 
                 ["class" => "mdl-cell--3-col", "name" => "quantity", "lang" => "webreports.quantity"], 

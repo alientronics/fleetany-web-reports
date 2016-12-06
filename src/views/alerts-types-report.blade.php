@@ -16,7 +16,7 @@
     	'gridview' => [
     		'pageActive' => $entity_key.'-alerts-types-report',
          	'sortFilters' => [
-                ["class" => "mdl-cell--6-col", "name" => "name", "lang" => "webreports.alert_type"], 
+                ["class" => "mdl-cell--6-col", "name" => "name", "lang" => "webreports.alertType"], 
                 ["class" => "mdl-cell--3-col", "name" => "quantity", "lang" => "webreports.quantity"], 
     		] 
     	]

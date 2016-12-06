@@ -36,10 +36,11 @@ class ReportController extends Controller
                                 Auth::user()->company_id.'?api_token='.config('app.alerts_api_key'));
         $registers = json_decode((string)$alertsTypes->getBody());
 
-        if(!empty($registers))
-        {
-            foreach($registers as $index => $register) {
-                $registers[$index]->status = empty($register->status) ? Lang::get("webreports.failed") : Lang::get("webreports.success");
+        if (!empty($registers)) {
+            foreach ($registers as $index => $register) {
+                $registers[$index]->status = empty($register->status) ?
+                                                Lang::get("webreports.failed") :
+                                                Lang::get("webreports.success");
             
                 $alert = json_decode($register->description);
                 $registers[$index]->name = $alert->description;

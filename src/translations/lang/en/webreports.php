@@ -11,5 +11,9 @@ return [
     'datetime'    => 'Datetime',
     'vehicle'    => 'Vehicle',
     'position'    => 'Position',
-    'quantity'    => 'Quantity'
+    'quantity'    => 'Quantity',
+    'VehiclesAlerts'    => 'Vehicles Alerts',
+    'TiresAlerts'    => 'Tires Alerts',
+    'VehiclesHistory'    => 'Vehicles History'
+    
 ];

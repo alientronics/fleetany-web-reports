@@ -15,3 +15,4 @@ Route::get('/web-reports/alerts/vehicles', '\App\Http\Controllers\VehicleControl
 Route::get('/web-reports/alerts/tires', '\App\Http\Controllers\TireController@index');
 Route::get('/web-reports/alerts/{entity_type}/{entity_id}', '\Alientronics\FleetanyWebReports\Controllers\ReportController@alertsReport');
 Route::get('/web-reports/alerts/{entity_type}/{entity_id}/type/{alert_type}', '\Alientronics\FleetanyWebReports\Controllers\ReportController@alertTypeReport');
+Route::get('/web-reports/history/vehicles', '\App\Http\Controllers\VehicleController@index');

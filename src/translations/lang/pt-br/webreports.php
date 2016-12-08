@@ -11,5 +11,8 @@ return [
     'datetime'    => 'Data e hora',
     'vehicle'    => 'Ve&iacute;culo',
     'position'    => 'Posi&ccedil;&atilde;o',
-    'quantity'    => 'Quantidade'
+    'quantity'    => 'Quantidade',
+    'VehiclesAlerts'    => 'Alertas',
+    'TiresAlerts'    => 'Alertas de Pneus',
+    'VehiclesHistory'    => 'Hist&oacute;rico de Ve&iacute;culos'
 ];

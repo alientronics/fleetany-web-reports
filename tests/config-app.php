@@ -155,7 +155,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Alientronics\FleetanyWebPages\FleetanyWebPagesServiceProvider::class,
+        Alientronics\FleetanyWebReports\FleetanyWebReportsServiceProvider::class,
 
     ],
 

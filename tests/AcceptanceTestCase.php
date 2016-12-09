@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use App\Entities\User;
+use App\User;
 
 class AcceptanceTestCase extends BaseTestCase
 {

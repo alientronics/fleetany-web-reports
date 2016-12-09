@@ -18,4 +18,10 @@ class ReportsTest extends AcceptanceTestCase
         $this->get('/reports/history/vehicles');
         $this->assertEquals($this->response->status(), 200);
     }
+    
+    public function testAlertsReport()
+    {
+        $this->get('/reports/alerts/tire/1');
+        $this->assertEquals($this->response->status(), 200);
+    }
 }

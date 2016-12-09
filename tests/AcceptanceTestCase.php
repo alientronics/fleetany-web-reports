@@ -3,6 +3,7 @@
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use App\Entities\User;
 
 class AcceptanceTestCase extends BaseTestCase
 {
@@ -27,5 +28,11 @@ class AcceptanceTestCase extends BaseTestCase
         $app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
         return $app;
+    }
+    
+    public function setUp()
+    {
+        parent::setUp();
+        $this->be(User::find(1));
     }
 }

@@ -2,12 +2,13 @@
 
 namespace Tests;
 
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use App\User;
 
 class AcceptanceTestCase extends BaseTestCase
 {
-    
+    use WithoutMiddleware;
     /**
      * The base URL to use while testing the application.
      *
@@ -28,11 +29,5 @@ class AcceptanceTestCase extends BaseTestCase
         $app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
         return $app;
-    }
-    
-    public function setUp()
-    {
-        parent::setUp();
-        $this->be(User::find(1));
     }
 }

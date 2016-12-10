@@ -7,22 +7,17 @@ use Tests\AcceptanceTestCase;
 class ReportsTest extends AcceptanceTestCase
 {
 
+    private function setVehicleEloquentMock($method, $return)
+    {
+        $mockRepo = \Mockery::mock('App\Repositories\VehicleRepositoryEloquent');
+        $mockRepo->shouldReceive($method)->andReturn($return);
+
+        $this->app->instance('App\Repositories\VehicleRepositoryEloquent', $mockRepo);
+    }
+
     public function testAlertsVehicles()
     {
-        $this->get('/reports/alerts/vehicles');
-        echo $this->response->getContent();
-        $this->assertEquals($this->response->status(), 200);
-    }
-    
-    public function testHistoryVehicles()
-    {
-        $this->get('/reports/history/vehicles');
-        $this->assertEquals($this->response->status(), 200);
-    }
-    
-    public function testAlertsReport()
-    {
-        $this->get('/reports/alerts/tire/1');
-        $this->assertEquals($this->response->status(), 200);
+        $this->setVehicleEloquentMock('results', 'entity attributes');
+        $this->get('/reports/alerts/vehicles')->see('vehicle');
     }
 }

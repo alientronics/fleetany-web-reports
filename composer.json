@@ -27,6 +27,7 @@
 	"guzzlehttp/guzzle": "^6.2"
   },
   "require-dev": {
+    "alientronics/fleetany-web": "dev-master",
     "phpunit/phpunit": "~4.0",
     "laravel/framework": "5.2.*",
     "laravel/laravel": "*",

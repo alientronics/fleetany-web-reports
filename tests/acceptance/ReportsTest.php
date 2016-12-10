@@ -10,6 +10,7 @@ class ReportsTest extends AcceptanceTestCase
     public function testAlertsVehicles()
     {
         $this->get('/reports/alerts/vehicles');
+        echo $this->response->getContent();
         $this->assertEquals($this->response->status(), 200);
     }
     

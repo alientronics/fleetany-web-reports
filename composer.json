@@ -24,7 +24,7 @@
   "require": {
     "php": ">=5.4.0",
     "illuminate/support": "^5.2",
-	"guzzlehttp/guzzle": "^6.2"
+    "guzzlehttp/guzzle": "^6.2"
   },
   "require-dev": {
     "alientronics/fleetany-web": "dev-master",
@@ -52,9 +52,7 @@
     "scripts": {
         "post-install-cmd": [
             "php -r \"copy('src/routes.php', 'vendor/laravel/laravel/app/Http/routes.php');\"",
-            "php -r \"copy('tests/config-app.php', 'vendor/laravel/laravel/config/app.php');\"",
-            "mkdir vendor/laravel/laravel/resources/views/layouts/",
-            "php -r \"copy('tests/config-app.php', 'vendor/laravel/laravel/resources/views/layouts/login.blade.php');\""
+            "mkdir -p vendor/laravel/laravel/resources/views/layouts/"
         ]
     },
   "minimum-stability": "dev"

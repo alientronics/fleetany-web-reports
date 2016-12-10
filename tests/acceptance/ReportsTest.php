@@ -18,6 +18,6 @@ class ReportsTest extends AcceptanceTestCase
     public function testAlertsVehicles()
     {
         $this->setVehicleEloquentMock('results', 'entity attributes');
-        $this->get('/reports/alerts/vehicles')->see('vehicle');
+        $this->get('/reports/alerts/vehicles')->see('vehicasdasles');
     }
 }

@@ -8,7 +8,7 @@ php:
 
 addons:
     code_climate:
-        repo_token: e33d8fcfffaa6a5171a0c059fabf1a1b29c29a0a26e0eb8424c95a7187ddf038
+        repo_token: 79923a93d5cf348c9efec73dc1b7cfcad6ebd3f3560f2e6a5707538af623c713
 
 before_install:
   - composer self-update

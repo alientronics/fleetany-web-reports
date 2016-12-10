@@ -31,12 +31,12 @@
     "phpunit/phpunit": "~4.0",
     "laravel/framework": "5.2.*",
     "laravel/laravel": "*",
-    "squizlabs/php_codesniffer": "*",
+    "squizlabs/php_codesniffer": "^2.3",
     "phploc/phploc": "*",
     "sebastian/phpcpd": "*",
     "phpmd/phpmd": "*",
-    "codeclimate/php-test-reporter": "*",
-    "mockery/mockery": "*"
+    "codeclimate/php-test-reporter": "dev-master",
+    "mockery/mockery": "0.9.*"
   },
   "autoload": {
     "psr-4": {

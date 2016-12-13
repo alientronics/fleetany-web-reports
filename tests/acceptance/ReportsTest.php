@@ -24,6 +24,7 @@ class ReportsTest extends AcceptanceTestCase
         
         $this->setEloquentMock('alertsReport', $mockStream);
         $this->get('/reports/alerts/tire/1');
+        echo $this->response->getContent();
         $this->assertEquals($this->response->status(), 200);
     }
 

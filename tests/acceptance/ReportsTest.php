@@ -22,6 +22,14 @@ class ReportsTest extends AcceptanceTestCase
         echo $this->response->getContent();
         $this->assertEquals($this->response->status(), 200);
     }
+    
+    public function testAlertTypeReportSuccess()
+    {
+        $this->setEloquentMock('alertTypeReport', 'entity attributes');
+        $this->get('/reports/alerts/tire/1/type/1');
+        echo $this->response->getContent();
+        $this->assertEquals($this->response->status(), 200);
+    }
 
     public function testAlertsVehicles()
     {

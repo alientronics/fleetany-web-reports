@@ -17,12 +17,7 @@ class ReportsTest extends AcceptanceTestCase
     
     public function testAlertsReportSuccess()
     {
-
-        $mockStream = \Mockery::mock('GuzzleHttp\Psr7\Stream')->makePartial();
-        $mockStream->shouldReceive('eof')->twice()->andReturn(false, true);
-        $mockStream->shouldReceive('read')->once()->andReturn("content");
-        
-        $this->setEloquentMock('alertsReport', $mockStream);
+        $this->setEloquentMock('alertsReport', 'entity attributes');
         $this->get('/reports/alerts/tire/1');
         echo $this->response->getContent();
         $this->assertEquals($this->response->status(), 200);

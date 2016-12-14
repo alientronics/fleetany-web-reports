@@ -53,7 +53,10 @@
         "post-install-cmd": [
             "php -r \"copy('src/routes.php', 'vendor/laravel/laravel/app/Http/routes.php');\"",
             "php -r \"copy('tests/config-app.php', 'vendor/laravel/laravel/config/app.php');\"",
-            "mkdir -p vendor/laravel/laravel/resources/views/layouts/"
+            "mkdir -p vendor/laravel/laravel/resources/views/layouts/",
+            "mkdir -p vendor/laravel/laravel/app/Repositories/",
+            "php -r \"copy('helper/FleetRepositoryEloquent.php', 'vendor/laravel/laravel/app/Repositories/FleetRepositoryEloquent.php');\"",
+            "php -r \"copy('helper/Controller.php', 'vendor/laravel/laravel/app/Http/Controllers/Controller.php');\""
         ]
     },
   "minimum-stability": "dev"

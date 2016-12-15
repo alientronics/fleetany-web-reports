@@ -9,15 +9,15 @@ class ReportsTest extends AcceptanceTestCase
 
     private function setEloquentMock($method, $return)
     {
-        $mockRepo = \Mockery::mock('Illuminate\Support\Facades\Auth');
-        $mockRepo->shouldReceive('user')->andReturn(['company_id'=>1]);
+        $mockRepo = \Mockery::mock('Alientronics\FleetanyWebReports\Repositories\ReportsRepositoryEloquent');
+        $mockRepo->shouldReceive($method)->andReturn($return);
 
-        $this->app->instance('Illuminate\Support\Facades\Auth', $mockRepo);
+        $this->app->instance('Alientronics\FleetanyWebReports\Repositories\ReportsRepositoryEloquent', $mockRepo);
     }
     
     public function testAlertsReportSuccess()
     {
-        //$this->setEloquentMock('alertsReport', []);
+        $this->setEloquentMock('getAlerts','');
         $this->get('/reports/alerts/tire/1');
         echo $this->response->getContent();
         $this->assertEquals($this->response->status(), 200);
@@ -25,7 +25,7 @@ class ReportsTest extends AcceptanceTestCase
     
     public function testAlertTypeReportSuccess()
     {
-        //$this->setEloquentMock('alertTypeReport', 'entity attributes');
+        $this->setEloquentMock('getTypes','');
         $this->get('/reports/alerts/tire/1/type/1');
         echo $this->response->getContent();
         $this->assertEquals($this->response->status(), 200);

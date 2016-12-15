@@ -7,27 +7,13 @@
       "name": "Alientronics"
     }
   ],
-  "repositories": [
-    {
-        "type": "package",
-        "package": {
-            "version": "dev-master",
-            "name": "alientronics/fleetany-web",
-            "source": {
-                "url": "https://github.com/alientronics/fleetany-web.git",
-                "type": "git",
-                "reference": "master"
-            }
-        }
-    }
-  ],
   "require": {
     "php": ">=5.4.0",
     "illuminate/support": "^5.2",
     "guzzlehttp/guzzle": "^6.2"
   },
   "require-dev": {
-    "alientronics/fleetany-web": "dev-master",
+    "fzaninotto/faker": "~1.4",
     "phpunit/phpunit": "~4.0",
     "laravel/framework": "5.2.*",
     "laravel/laravel": "*",
@@ -35,7 +21,8 @@
     "phploc/phploc": "*",
     "sebastian/phpcpd": "*",
     "phpmd/phpmd": "*",
-    "codeclimate/php-test-reporter": "*",
+    "codeclimate/php-test-reporter": "dev-master",
+    "prettus/l5-repository": "dev-master",
     "mockery/mockery": "*"
   },
   "autoload": {
@@ -52,8 +39,10 @@
     "scripts": {
         "post-install-cmd": [
             "php -r \"copy('src/routes.php', 'vendor/laravel/laravel/app/Http/routes.php');\"",
-            "php -r \"copy('tests/config-app.php', 'vendor/laravel/laravel/config/app.php');\"",
+            "mkdir -p vendor/laravel/laravel/resources/views/includes/",
+            "php -r \"copy('helper/view.blade.php', 'vendor/laravel/laravel/resources/views/includes/gridview.blade.php');\"",
             "mkdir -p vendor/laravel/laravel/resources/views/layouts/",
+            "php -r \"copy('helper/view.blade.php', 'vendor/laravel/laravel/resources/views/layouts/default.blade.php');\"",
             "mkdir -p vendor/laravel/laravel/app/Repositories/",
             "php -r \"copy('helper/FleetRepositoryEloquent.php', 'vendor/laravel/laravel/app/Repositories/FleetRepositoryEloquent.php');\"",
             "php -r \"copy('helper/Controller.php', 'vendor/laravel/laravel/app/Http/Controllers/Controller.php');\""

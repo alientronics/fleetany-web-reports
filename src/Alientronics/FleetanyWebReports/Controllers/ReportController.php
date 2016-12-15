@@ -3,14 +3,11 @@
 namespace Alientronics\FleetanyWebReports\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Entities\User;
 use Illuminate\Http\Request;
-use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Auth;
-use App\Entities\Part;
 use Illuminate\Support\Facades\Lang;
 use App\Repositories\HelperRepository;
 use App\Repositories\FleetRepositoryEloquent;
+use Alientronics\FleetanyWebReports\Repositories\ReportsRepositoryEloquent;
 
 /**
  * Class ReportController
@@ -19,33 +16,28 @@ use App\Repositories\FleetRepositoryEloquent;
 class ReportController extends Controller
 {
     protected $fleetRepo;
+    protected $reportsRepo;
+    protected $companyId;
     
-    public function __construct(FleetRepositoryEloquent $fleetRepo)
+    public function __construct(FleetRepositoryEloquent $fleetRepo, ReportsRepositoryEloquent $reportsRepo)
     {
         parent::__construct();
 
         $this->middleware('auth');
         $this->fleetRepo = $fleetRepo;
+        $this->reportsRepo = $reportsRepo;
     }
     
     public function alertsReport($entity_key, $entity_id)
     {
-        $client = new Client();
-        $alertsTypes = $client->request('GET', config('app.alerts_api_url').'/api/v1/alerts/'.
-            $entity_key.'/'.$entity_id.'/'.Auth::user()->company_id.'?api_token='.
-            config('app.alerts_api_key'));
-        $registers = json_decode((string)$alertsTypes->getBody());
+        $registers = $this->reportsRepo->getAlerts($entity_key, $entity_id);
     
         return view("fleetany-web-reports::alerts-types-report", compact('registers', 'entity_key', 'entity_id'));
     }
     
     public function alertTypeReport($entity_key, $entity_id, $alert_type)
     {
-        $client = new Client();
-        $alertsTypes = $client->request('GET', config('app.alerts_api_url').'/api/v1/alerts/'.
-                                $entity_key.'/'.$entity_id.'/type/'.$alert_type.'/'.
-                                Auth::user()->company_id.'?api_token='.config('app.alerts_api_key'));
-        $registers = json_decode((string)$alertsTypes->getBody());
+        $registers = $this->reportsRepo->getTypes($entity_key, $entity_id, $alert_type);
 
         if (!empty($registers)) {
             foreach ($registers as $index => $register) {

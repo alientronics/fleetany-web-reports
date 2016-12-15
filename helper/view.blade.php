@@ -1,3 +1,3 @@
-{{ @$attribute->key }} 
-{{ @$attributes }}
-{{ @$entity_key['vehicle'] }}
+{{ @$registers->key }} 
+{{ @$registers }}
+{{ @$registers['vehicle'] }}

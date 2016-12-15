@@ -39,6 +39,7 @@
     "scripts": {
         "post-install-cmd": [
             "php -r \"copy('src/routes.php', 'vendor/laravel/laravel/app/Http/routes.php');\"",
+            "php -r \"copy('tests/config-app.php', 'vendor/laravel/laravel/config/app.php');\"",
             "mkdir -p vendor/laravel/laravel/resources/views/includes/",
             "php -r \"copy('helper/view.blade.php', 'vendor/laravel/laravel/resources/views/includes/gridview.blade.php');\"",
             "mkdir -p vendor/laravel/laravel/resources/views/layouts/",

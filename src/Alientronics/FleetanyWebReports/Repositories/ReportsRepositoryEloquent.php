@@ -44,5 +44,4 @@ class ReportsRepositoryEloquent
         
         return json_decode((string)$response->getBody());
     }
- 
 }

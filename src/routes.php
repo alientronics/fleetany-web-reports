@@ -15,7 +15,7 @@ Route::group(
     [
     'middleware' => ['auth',
     'acl'],
-    'can' => 'view.attributes'],
+    'can' => 'view.report'],
     function () {
 		Route::get('/reports/alerts/vehicles', '\App\Http\Controllers\VehicleController@index');
 		Route::get('/reports/alerts/tires', '\App\Http\Controllers\TireController@index');

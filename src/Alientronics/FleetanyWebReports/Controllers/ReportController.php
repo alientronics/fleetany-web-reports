@@ -32,7 +32,7 @@ class ReportController extends Controller
     {
         $registers = $this->reportsRepo->getAlerts($entity_key, $entity_id);
     
-        return view("fleetany-web-reports::alerts-types-report", compact('registers', 'entity_key', 'entity_id'));
+        return view("fleetany-web-reports::reports.alerts.types", compact('registers', 'entity_key', 'entity_id'));
     }
     
     public function alertTypeReport($entity_key, $entity_id, $alert_type)
@@ -52,6 +52,6 @@ class ReportController extends Controller
             }
         }
 
-        return view("fleetany-web-reports::alerts-report", compact('registers', 'entity_key', 'entity_id'));
+        return view("fleetany-web-reports::reports.alerts.index", compact('registers', 'entity_key', 'entity_id'));
     }
 }

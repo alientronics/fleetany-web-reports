@@ -22,5 +22,11 @@ Route::group(
 		Route::get('/reports/alerts/{entity_type}/{entity_id}', '\Alientronics\FleetanyWebReports\Controllers\ReportController@alertsReport');
 		Route::get('/reports/alerts/{entity_type}/{entity_id}/type/{alert_type}', '\Alientronics\FleetanyWebReports\Controllers\ReportController@alertTypeReport');
 		Route::get('/reports/history/vehicles', '\App\Http\Controllers\VehicleController@index');
+        
+		Route::get('/reports/vehicles', '\Alientronics\FleetanyWebReports\Controllers\VehicleReportController@index');
+        Route::get('/reports/tires', '\Alientronics\FleetanyWebReports\Controllers\TiresReportController@index');
+        Route::get('/reports/sensors', '\Alientronics\FleetanyWebReports\Controllers\TiresReportController@sensors');
+        Route::get('/reports/vehicles/maintenance', '\Alientronics\FleetanyWebReports\Controllers\VehicleReportController@maintenance');
+        Route::get('/reports/tires/maintenance', '\Alientronics\FleetanyWebReports\Controllers\TiresReportController@maintenance');
     }
 );
